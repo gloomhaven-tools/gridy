@@ -48,6 +48,7 @@
   "module ": "dist/es6/index.js",
   "repository": ".",
   "scripts": {
+    "generate:all": "npm run doc && npm run build && npm run examples",
     "build": "tsc -d --declarationDir dist/types -p tsconfig.json --outDir dist/es6 && rollup -m -c rollup.config.js dist/es6/index.js -o dist/gridy.js -f umd -n Gridy && rollup -m -c rollup.config.js dist/es6/Diagram.js -o dist/diagram.js -f umd -n Diagram",
     "clean": "del-cli doc dist examples/output",
     "doc": "typedoc --hideGenerator --mode file --out doc src/ --name Gridy --readme .template.md",
